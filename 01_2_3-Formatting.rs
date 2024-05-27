@@ -28,12 +28,14 @@ struct Color {
     blue: u8,
 }
 
-impl fmt::Display for Color {
-    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
-        let hex: u32 = self.red * 65536;
+impl Display for Color {
+    fn fmt(&self , f: &mut Formatter) -> fmt::Result {
+        let red = self.red as u32;
+        let green = self.green as u32;
+        let blue = self.blue as u32;
+        let hex_color = red * 65536 + green * 256 + blue ;
 
-        write!(f, "{}, {}, {}, {}", self.red, self.green, self.blue, hex)
-
+        write!(f, "RGB ({}, {}, {}) {:#08X}", self.red, self.green, self.blue, hex_color)
     }
 }
 
