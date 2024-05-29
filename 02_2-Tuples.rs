@@ -1,3 +1,5 @@
+use std::fmt::{self, Formatter, Display};
+
 // Tuples can be used as function arguments and as return values.
 fn reverse(pair: (i32, bool)) -> (bool, i32) {
     // `let` can be used to bind the members of a tuple to variables.
@@ -9,6 +11,19 @@ fn reverse(pair: (i32, bool)) -> (bool, i32) {
 // The following struct is for the activity.
 #[derive(Debug)]
 struct Matrix(f32, f32, f32, f32);
+
+impl fmt::Display for Matrix {
+    fn fmt(&self , f: &mut fmt::Formatter) -> fmt::Result {
+        write! (f, "({} {})", self.0, self.1);
+        write! (f, "\n({} {})", self.2, self.3)
+    }
+}
+
+fn transpose(matrix: Matrix) -> Matrix {
+    let transpose = Matrix(matrix.0, matrix.2, matrix.1, matrix.3);
+
+    (transpose)
+}
 
 fn main() {
     // A tuple with a bunch of different types.
@@ -25,17 +40,17 @@ fn main() {
     let tuple_of_tuples = ((1u8, 2u16, 2u32), (4u64, -1i8), -2i16);
 
     // Tuples are printable.
-    println!("tuple of tuples: {:?}", tuple_of_tuples);
+    println!("tuple of tuples: {:?}", tuple_of_tuples.1);
 
     // But long Tuples (more than 12 elements) cannot be printed.
     //let too_long_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
     //println!("Too long tuple: {:?}", too_long_tuple);
     // TODO ^ Uncomment the above 2 lines to see the compiler error
 
-    let pair = (1, true);
-    println!("Pair is {:?}", pair);
+    let par = (1, true);
+    println!("Pair is {:?}", par);
 
-    println!("The reversed pair is {:?}", reverse(pair));
+    println!("The reversed pair is {:?}", reverse(par));
 
     // To create one element tuples, the comma is required to tell them apart
     // from a literal surrounded by parentheses.
@@ -46,8 +61,11 @@ fn main() {
     let tuple = (1, "hello", 4.5, true);
 
     let (a, b, c, d) = tuple;
-    println!("{:?}, {:?}, {:?}, {:?}", a, b, c, d);
+    println!("{:?}, {:?}, {:?}, {:?}", a, c, d, c); // Rock and roll baby
 
-    let matrix = Matrix(1.1, 1.2, 2.1, 2.2);
-    println!("{:?}", matrix);
+    let matrix = Matrix(1.1, 1.2, 2.4, 2.2);
+    println!("{}", matrix);
+
+    println!("Matrix:\n{}", matrix);
+    println!("Transpose:\n{}", transpose(matrix));
 }
