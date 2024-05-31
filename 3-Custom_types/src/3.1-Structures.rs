@@ -73,4 +73,10 @@ fn main() {
     let Pair(integer, decimal) = pair;
 
     println!("pair contains {:?} and {:?}", integer, decimal);
+
+    rect_area();
+}
+
+fn rect_area() {
+    println!("This is rect_area function");
 }
