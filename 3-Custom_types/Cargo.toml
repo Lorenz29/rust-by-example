@@ -4,3 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+
+[[bin]]
+bench = false
+path = "src/3.1-Structures.rs"
+name = "custom_types"
