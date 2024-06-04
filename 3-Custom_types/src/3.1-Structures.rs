@@ -79,4 +79,5 @@ fn main() {
 
 fn rect_area() {
     println!("This is rect_area function");
+    println!("Do something!");
 }
