@@ -34,7 +34,7 @@ fn main() {
     let peter = Person { name, age };
 
     // Print debug struct
-    println!("{:?}", peter);
+    println!("{}", peter);
 
     // Instantiate a `Point`
     let point: Point = Point { x: 10.3, y: 0.4 };
