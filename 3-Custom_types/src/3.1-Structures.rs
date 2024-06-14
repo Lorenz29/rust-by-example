@@ -64,7 +64,7 @@ fn main() {
     let _unit = Unit;
 
     // Instantiate a tuple struct
-    let pair = Pair(1, 0.1);
+    let pair = Pair(1, 4.1);
 
     // Access the fields of a tuple struct
     println!("pair contains {:?} and {:?}", pair.0, pair.1);
@@ -74,10 +74,12 @@ fn main() {
 
     println!("pair contains {:?} and {:?}", integer, decimal);
 
-    rect_area();
+    rect_area(_rectangle);
 }
 
-fn rect_area() {
+fn rect_area( rect: Rectangle) {
     println!("This is rect_area function");
-    println!("Do something!");
+    let Point(x: _top_left, y: _bottom_right) = rect;
+    println!("{:?}",_top_left);
+    // let _base = 
 }
