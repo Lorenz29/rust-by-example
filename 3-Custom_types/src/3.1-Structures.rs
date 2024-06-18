@@ -80,9 +80,11 @@ fn main() {
 fn rect_area( rect: Rectangle) {
     println!("This is rect_area function");
     
-    
+    let area = (rect.top_left.x - rect.bottom_right.x).abs() * (rect.top_left.y - rect.bottom_right.y).abs();
 
-    println!("Top Left {:?}",rect.top_left.x);
-    println!("Bottom right {:?}",rect.bottom_right.x);
-    // let _base = 
+    println!("X Top Left {:?}",rect.top_left.x);
+    println!("X Bottom right {:?}",rect.bottom_right.x);
+    println!("Y Top Left {:?}",rect.top_left.y);
+    println!("Y Bottom right {:?}",rect.bottom_right.y);
+    println!("The area of the rectagle is {}",area); 
 }
