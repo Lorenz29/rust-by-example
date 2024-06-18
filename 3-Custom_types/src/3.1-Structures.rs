@@ -79,7 +79,10 @@ fn main() {
 
 fn rect_area( rect: Rectangle) {
     println!("This is rect_area function");
-    let Point(x: _top_left, y: _bottom_right) = rect;
-    println!("{:?}",_top_left);
+    
+    
+
+    println!("Top Left {:?}",rect.top_left.x);
+    println!("Bottom right {:?}",rect.bottom_right.x);
     // let _base = 
 }
