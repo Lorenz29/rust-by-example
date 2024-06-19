@@ -37,7 +37,7 @@ fn main() {
     println!("{} is {} years old", peter.name, peter.age);
 
     // Instantiate a `Point`
-    let point: Point = Point { x: 10.3, y: 0.4 };
+    let point: Point = Point { x: 10.3, y: 1.4 };
     let another_point: Point = Point { x: 5.2, y: 0.2 };
 
     // Access the fields of the point
@@ -79,12 +79,12 @@ fn main() {
 
 fn rect_area( rect: Rectangle) {
     println!("This is rect_area function");
-    
-    let area = (rect.top_left.x - rect.bottom_right.x).abs() * (rect.top_left.y - rect.bottom_right.y).abs();
 
-    println!("X Top Left {:?}",rect.top_left.x);
-    println!("X Bottom right {:?}",rect.bottom_right.x);
-    println!("Y Top Left {:?}",rect.top_left.y);
-    println!("Y Bottom right {:?}",rect.bottom_right.y);
-    println!("The area of the rectagle is {}",area); 
+    // Destructuring the rectangle struct
+    
+    let Rectangle{top_left: Point{x: x1, y: y1}, bottom_right: Point{x: x2, y: y2}} = rect;
+    println!("X1: {} | X2: {} | Y1 {} | Y2 {}", x1, x2, y1, y2);
+
+    let destructuring_area = ((x1-x2)*(y1-y2)).abs();
+    println!("Using destructuring: The area of the rectagle is {}",destructuring_area); 
 }
