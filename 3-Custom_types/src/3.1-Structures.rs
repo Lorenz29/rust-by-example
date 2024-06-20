@@ -1,6 +1,6 @@
 // An attribute to hide warnings for unused code.
 #![allow(dead_code)]
-
+#[derive(Copy, Clone)]
 #[derive(Debug)]
 struct Person {
     name: String,
@@ -74,7 +74,11 @@ fn main() {
 
     println!("pair contains {:?} and {:?}", integer, decimal);
 
+    let _square: Rectangle = square(_rectangle.top_left , 3.0);
+    
     rect_area(_rectangle);
+    
+    println!("The square points are {:?} and {:?}", _square.top_left.x, _square.bottom_right.x);
 }
 
 fn rect_area( rect: Rectangle) {
@@ -87,4 +91,15 @@ fn rect_area( rect: Rectangle) {
 
     let destructuring_area = ((x1-x2)*(y1-y2)).abs();
     println!("Using destructuring: The area of the rectagle is {}",destructuring_area); 
+}
+
+fn square (_point: Point , _value: f32) -> Rectangle {
+    
+    let point2 : Point = { Point { x: _point.x + _value , y: _point.y + _value}};
+
+    let _rect = Rectangle { 
+        top_left : _point, 
+        bottom_right : point2,
+    };
+    return _rect;
 }
