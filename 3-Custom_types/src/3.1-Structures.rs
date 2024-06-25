@@ -74,14 +74,15 @@ fn main() {
 
     println!("pair contains {:?} and {:?}", integer, decimal);
 
-    let _square: Rectangle = square(&_rectangle.top_left , 3.0);
+    // let ref p1: Point = _rectangle.top_left ;
+    let _square: Rectangle = square(_rectangle.top_left , 3.0);
     
     rect_area(_rectangle);
     
     println!("The square points are {:?} and {:?}", _square.top_left.x, _square.bottom_right.x);
 }
 
-fn rect_area( rect: Rectangle) {
+fn rect_area(mut rect: Rectangle) {
     println!("This is rect_area function");
 
     // Destructuring the rectangle struct
