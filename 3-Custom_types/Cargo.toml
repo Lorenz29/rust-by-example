@@ -1,5 +1,5 @@
 [package]
-name = "custom_types"
+name = "Enums"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,5 +7,5 @@ edition = "2021"
 
 [[bin]]
 bench = false
-path = "src/3.1-Structures.rs"
-name = "custom_types"
+path = "src/3.2-Enums.rs"
+name = "Enums"

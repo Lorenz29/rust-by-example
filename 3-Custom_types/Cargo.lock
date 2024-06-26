@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "custom_types"
+name = "Enums"
 version = "0.1.0"
