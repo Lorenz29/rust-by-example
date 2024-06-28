@@ -18,6 +18,7 @@ fn main() {
     // Automatically `use` each name inside `Role`.
     use crate::Role::*;
 
+
     // Equivalent to `Stage::Beginner`.
     let stage = Beginner;
     // Equivalent to `Role::Student`.
@@ -25,6 +26,7 @@ fn main() {
 
     match stage {
         // Note the lack of scoping because of the explicit `use` above.
+        Rookie => println!("Rookies are starting their learning journey!"),
         Beginner => println!("Beginners are starting their learning journey!"),
         Advanced => println!("Advanced learners are mastering their subjects..."),
     }
