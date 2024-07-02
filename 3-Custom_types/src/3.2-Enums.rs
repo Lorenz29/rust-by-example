@@ -26,7 +26,6 @@ fn main() {
 
     match stage {
         // Note the lack of scoping because of the explicit `use` above.
-        Rookie => println!("Rookies are starting their learning journey!"),
         Beginner => println!("Beginners are starting their learning journey!"),
         Advanced => println!("Advanced learners are mastering their subjects..."),
     }
